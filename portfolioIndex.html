@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="lo" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Empowered Dev Team Lead Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Lao', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(231, 229, 228, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 leading-relaxed">
+
+    <!-- Chosen Palette: Warm Neutrals with Earthy Accents (Stone-50 background, Teal-700/Teal-600 for primary accents, Amber-600 for highlights) -->
+    <!-- Application Structure Plan: The SPA uses a dashboard-style interactive narrative. It starts with a Hero section identifying the user and their core mission. A high-impact KPI section follows to immediately show value. The core of the application is a tabbed interactive dashboard representing the 4 'Use Cases'. This allows users to non-linearly explore how AI is applied to Organization, Coding, Data, and Automation without scrolling through a massive vertical list. An AI Proficiency section uses a Radar chart to quantify skills. This structure maximizes engagement and perfectly groups the qualitative/quantitative data from the source report. -->
+    <!-- Visualization & Content Choices: 1. Core KPIs -> Big Numbers (Goal: Inform -> Immediate impact validation). 2. AI Tools Mastery -> Radar Chart via Chart.js (Goal: Compare/Organize -> Shows diverse skill levels effectively in a bounded area). 3. Time Allocation (Before/After AI) -> Bar Chart via Chart.js (Goal: Compare -> Clearly contrasts traditional vs AI-assisted workflows). 4. App Integration Flow -> HTML/CSS Flexbox Process Flow (Goal: Organize -> Shows system integration without using prohibited SVG/Mermaid). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="sticky top-0 z-50 bg-stone-50/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <span class="text-xl font-bold text-teal-800 tracking-wide">AI.DevLead</span>
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#summary" class="text-stone-600 hover:text-teal-700 transition">ບົດສະຫຼຸບຫຍໍ້</a>
+                    <a href="#impact" class="text-stone-600 hover:text-teal-700 transition">ຜົນງານທີ່ເກີດຂຶ້ນ</a>
+                    <a href="#usecases" class="text-stone-600 hover:text-teal-700 transition">ການນຳໃຊ້ AI ເຂົ້າໃນວຽກງານ</a>
+                    <a href="#skills" class="text-stone-600 hover:text-teal-700 transition">ທັກສະ AI</a>
+                </div>
+                <a href="#contact" class="bg-teal-700 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-teal-800 transition shadow-sm">ຕິດຕໍ່ຂ້ອຍ</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-4 pb-16 px-4 text-center max-w-4xl mx-auto">
+        <div class="inline-block mb-4 p-1 rounded-full shadow-sm">
+            <img src="https://avatars.githubusercontent.com/u/165355327?v=4" alt="Your Profile Picture" class="rounded-full object-cover" width="150" />
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-stone-900 mb-6 tracking-tight">
+            ອຸໄລມົວ ເຊ່ຍຈຶ
+        </h1>
+        <h2 class="text-xl md:text-2xl text-teal-700 font-semibold mb-6">
+            AI-Driven Development Team Lead | Problem Solver | Tech Innovator
+        </h2>
+        <p class="text-lg text-stone-600 max-w-2xl mx-auto italic border-l-4 border-amber-500 pl-4 text-left bg-stone-100 p-4 rounded-r-lg">
+            "Bridging the gap between software development and AI to drive team efficiency and business value."<br>
+            <span class="text-base text-stone-500 block mt-2 not-italic">ເຊື່ອມຕໍ່ຊ່ອງຫວ່າງລະຫວ່າງການພັດທະນາຊອບແວ ແລະ AI ເພື່ອຂັບເຄື່ອນປະສິດທິພາບທີມ ແລະ ສ້າງຄຸນຄ່າທາງທຸລະກິດ.</span>
+        </p>
+    </header>
+
+    <section id="summary" class="max-w-6xl mx-auto px-4 py-12">
+        <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold text-stone-800 mb-3">Executive Summary</h3>
+            <p class="text-stone-600 max-w-2xl mx-auto">ພາບລວມຂອງບົດບາດ, ສິ່ງທີ່ຂ້ອຍເຮັດ ແລະ ຄຸນຄ່າຫຼັກທີ່ຂ້ອຍມອບໃຫ້ອົງກອນຜ່ານການບໍລິຫານທີມດ້ວຍເທັກໂນໂລຊີ AI.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card p-8 rounded-2xl shadow-sm hover:shadow-md transition border-t-4 border-t-amber-500">
+                <div class="text-3xl mb-4 text-teal-600">&#128100;</div>
+                <h4 class="text-lg font-bold text-stone-800 mb-2">Who I am</h4>
+                <p class="text-stone-600 text-sm">ຜູ້ນຳທີມພັດທະນາຊອບແວທີ່ມີປະສົບການ [X] ປີ, ມີຄວາມຫຼົງໄຫຼໃນການນຳໃຊ້ AI ເພື່ອຫຍໍ້ເວລາການເຮັດວຽກ.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl shadow-sm hover:shadow-md transition border-t-4 border-t-amber-500">
+                <div class="text-3xl mb-4 text-teal-600">&#9881;</div>
+                <h4 class="text-lg font-bold text-stone-800 mb-2">What I do</h4>
+                <p class="text-stone-600 text-sm">ປ່ຽນຂະບວນການເຮັດວຽກທີ່ຊັບຊ້ອນໃຫ້ງ່າຍຂຶ້ນ ໂດຍການປະສົມປະສານ AI ເຂົ້າໃນ SDLC, ການວິເຄາະຂໍ້ມູນ ແລະ ການບໍລິຫານທີມ.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl shadow-sm hover:shadow-md transition border-t-4 border-t-amber-500">
+                <div class="text-3xl mb-4 text-teal-600">&#128142;</div>
+                <h4 class="text-lg font-bold text-stone-800 mb-2">Core Value</h4>
+                <p class="text-stone-600 text-sm">ຫຼຸດເວລາການຂຽນໂຄດ, ເພີ່ມຄຸນນະພາບຂອງ Document, ແລະ ແກ້ໄຂບັນຫາ Data ທີ່ຊັບຊ້ອນດ້ວຍ AI.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="bg-teal-900 py-16 mt-12 mb-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold text-stone-50 mb-4">Summary of Impact</h3>
+            <p class="text-teal-200 mb-10 max-w-2xl mx-auto">ສະຫຼຸບຜົນງານທີ່ເກີດຂຶ້ນຈິງຈາກການນຳໃຊ້ AI ເຂົ້າໃນຂະບວນການພັດທະນາຊອບແວ</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-teal-800/50 p-6 rounded-xl border border-teal-700">
+                    <div class="text-5xl font-black text-amber-400 mb-2">+30%</div>
+                    <div class="text-lg font-semibold text-stone-50">Delivery Speed</div>
+                    <p class="text-sm text-teal-200 mt-2">ທີມສາມາດສົ່ງມອບວຽກໄດ້ໄວຂຶ້ນ</p>
+                </div>
+                <div class="bg-teal-800/50 p-6 rounded-xl border border-teal-700">
+                    <div class="text-5xl font-black text-amber-400 mb-2">-40%</div>
+                    <div class="text-lg font-semibold text-stone-50">Admin & Doc Time</div>
+                    <p class="text-sm text-teal-200 mt-2">ຫຼຸດເວລາການເຮັດເອກະສານດ້ວຍການ Generate ໂຄງສ້າງ ແລະ ເນື້ອຫາ</p>
+                </div>
+                <div class="bg-teal-800/50 p-6 rounded-xl border border-teal-700">
+                    <div class="text-5xl font-black text-amber-400 mb-2">100%</div>
+                    <div class="text-lg font-semibold text-stone-50">Empowered Team</div>
+                    <p class="text-sm text-teal-200 mt-2">ນຳພາທີມໃຫ້ປັບຕົວເຂົ້າກັບຍຸກ AI-Assisted Development ໄດ້ຢ່າງສົມບູນ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="usecases" class="max-w-6xl mx-auto px-4 py-12">
+        <div class="mb-10 text-center">
+            <h3 class="text-3xl font-bold text-stone-800 mb-4">AI Applied in Practice (Use Cases)</h3>
+            <p class="text-stone-600 max-w-3xl mx-auto">ພາກສ່ວນນີ້ສະແດງໃຫ້ເຫັນເຖິງການປະຍຸກໃຊ້ AI ໃນສະຖານະການຈິງ. ກົດເລືອກແຕ່ລະຫົວຂໍ້ດ້ານລຸ່ມເພື່ອເບິ່ງວ່າ AI ເຂົ້າມາຊ່ວຍແກ້ໄຂບັນຫາແນວໃດ.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2 mb-8" id="tab-buttons">
+            <button class="px-6 py-3 rounded-full font-semibold transition bg-teal-700 text-white shadow-md" data-target="tab-org">ການນຳພາທີມ (Organization)</button>
+            <button class="px-6 py-3 rounded-full font-semibold transition bg-stone-200 text-stone-700 hover:bg-stone-300" data-target="tab-dev">ການພັດທະນາ (Coding)</button>
+            <button class="px-6 py-3 rounded-full font-semibold transition bg-stone-200 text-stone-700 hover:bg-stone-300" data-target="tab-data">ການວິເຄາະຂໍ້ມູນ (Data/Doc)</button>
+            <button class="px-6 py-3 rounded-full font-semibold transition bg-stone-200 text-stone-700 hover:bg-stone-300" data-target="tab-auto">ການເຊື່ອມຕໍ່ (Automation)</button>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 md:p-10 shadow-sm border border-stone-200 min-h-[450px]">
+            
+            <div id="tab-org" class="tab-content active">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <h4 class="text-2xl font-bold text-teal-800 mb-4">Dev Team Lead & Organization</h4>
+                        <div class="mb-4">
+                            <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded font-bold mb-2">Challenge</span>
+                            <p class="text-stone-700 text-sm">ການຈັດການ Task, ການວາງແຜນ Sprint ແລະ ການສື່ສານພາຍໃນທີມໃຊ້ເວລາຫຼາຍ.</p>
+                        </div>
+                        <div class="mb-4 p-4 bg-teal-50 border-l-4 border-teal-500 rounded-r">
+                            <span class="inline-block bg-teal-200 text-teal-800 text-xs px-2 py-1 rounded font-bold mb-2">AI Solution</span>
+                            <ul class="list-disc pl-5 text-sm text-stone-700 space-y-2">
+                                <li>ໃຊ້ AI ສະຫຼຸບ Meeting Notes ຍາວໆ ໃຫ້ກາຍເປັນ Action Items ພາຍໃນ 1 ນາທີ.</li>
+                                <li>ນຳໃຊ້ AI ຊ່ວຍຮ່າງ (Draft) Jira Tickets, User Stories ແລະ Acceptance Criteria ໃຫ້ຊັດເຈນ ແລະ ຄົບຖ້ວນຂຶ້ນ.</li>
+                                <li>ໃຊ້ AI ຊ່ວຍວິເຄາະ Team Velocity ແລະ ຄາດຄະເນ (Predict) ຄວາມສ່ຽງໃນການປ່ອຍ Release.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold mb-2">Impact</span>
+                            <p class="text-stone-800 font-semibold">ຫຼຸດເວລາການເຮັດວຽກດ້ານ Admin ຂອງ Lead ໄດ້ 40%, ເຮັດໃຫ້ມີເວລາໄປໂຟກັສກັບການ Coaching ທີມຫຼາຍຂຶ້ນ.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-inner border border-stone-100">
+                        <p class="text-center text-sm font-semibold text-stone-500 mb-2">Time Allocation per Sprint (Hours)</p>
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-dev" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <h4 class="text-2xl font-bold text-teal-800 mb-4">Developer & Coding</h4>
+                        <div class="mb-4">
+                            <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded font-bold mb-2">Challenge</span>
+                            <p class="text-stone-700 text-sm">ການຂຽນໂຄດຊ້ຳຊາກ (Boilerplate), ການຫາ Bug ທີ່ຍາກ, ແລະ ການເຮັດ Code Review ທີ່ໃຊ້ເວລາ.</p>
+                        </div>
+                        <div class="mb-4 p-4 bg-teal-50 border-l-4 border-teal-500 rounded-r">
+                            <span class="inline-block bg-teal-200 text-teal-800 text-xs px-2 py-1 rounded font-bold mb-2">AI Solution</span>
+                            <ul class="list-disc pl-5 text-sm text-stone-700 space-y-2">
+                                <li><b>Pair Programming ກັບ AI:</b> ໃຊ້ GitHub Copilot/Cursor ເພື່ອ Auto-complete logic ທີ່ຊັບຊ້ອນ.</li>
+                                <li><b>Code Refactoring:</b> ໃຊ້ Prompt ສັ່ງໃຫ້ AI ປັບປຸງ Legacy Code ໃຫ້ເປັນ Clean Code ຕາມຫຼັກ SOLID principles.</li>
+                                <li><b>Automated Testing:</b> ໃຫ້ AI ສ້າງ Unit Tests ຄອບຄຸມ Edge cases ຕ່າງໆຢ່າງໄວວາ.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold mb-2">Impact</span>
+                            <p class="text-stone-800 font-semibold">ເພີ່ມຄວາມໄວໃນການພັດທະນາ (Development Speed) ຂຶ້ນ 30% ແລະ ຫຼຸດຈຳນວນ Bug ໃນລະບົບ.</p>
+                        </div>
+                    </div>
+                    <div class="bg-stone-900 p-6 rounded-xl font-mono text-xs overflow-hidden shadow-lg relative">
+                        <div class="absolute top-0 left-0 w-full h-6 bg-stone-800 flex items-center px-3">
+                            <div class="w-2 h-2 rounded-full bg-red-500 mr-1.5"></div>
+                            <div class="w-2 h-2 rounded-full bg-yellow-500 mr-1.5"></div>
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="mt-4 text-stone-400">
+                            <p class="mb-2 text-stone-500">// Before: Legacy Code (Manual)</p>
+                            <p>function calculate(d) {</p>
+                            <p class="pl-4">let res = [];</p>
+                            <p class="pl-4">for(let i=0; i&lt;d.length; i++) {</p>
+                            <p class="pl-8">if(d[i].active) res.push(d[i].val * 2);</p>
+                            <p class="pl-4">}</p>
+                            <p class="pl-4">return res;</p>
+                            <p>}</p>
+                        </div>
+                        <div class="mt-4 text-teal-300">
+                            <p class="mb-2 text-teal-600">// After: Refactored with AI (Clean Code)</p>
+                            <p><span class="text-purple-400">const</span> <span class="text-blue-300">calculateActiveValues</span> = (data) => {</p>
+                            <p class="pl-4"><span class="text-purple-400">return</span> data</p>
+                            <p class="pl-8">.<span class="text-yellow-200">filter</span>(item => item.active)</p>
+                            <p class="pl-8">.<span class="text-yellow-200">map</span>(item => item.val * 2);</p>
+                            <p>};</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-data" class="tab-content">
+                <div class="max-w-3xl mx-auto">
+                    <h4 class="text-2xl font-bold text-teal-800 mb-4 text-center">Document & Data Analysis</h4>
+                    <p class="text-stone-600 mb-8 text-center text-sm">
+                        ວິເຄາະຂໍ້ມູນມະຫາສານ ແລະ ປ່ຽນເອກະສານທີ່ຊັບຊ້ອນໃຫ້ກາຍເປັນຂໍ້ມູນທີ່ເຂົ້າໃຈງ່າຍ.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-2 text-3xl opacity-20">&#128200;</div>
+                            <h5 class="font-bold text-stone-800 mb-2">Data Extraction</h5>
+                            <p class="text-sm text-stone-600 mb-4">ອັບໂຫຼດໄຟລ໌ CSV/JSON ຂອງ Error Logs ໃຫ້ AI (ເຊັ່ນ ChatGPT Advanced Data Analysis) ວິເຄາະຫາ Pattern ຂອງ System Crash.</p>
+                            <div class="text-xs bg-stone-100 p-2 rounded text-stone-500 font-mono">
+                                {"error_code": 500, "count": 432, "pattern": "memory_leak_at_auth"}
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-2 text-3xl opacity-20">&#128196;</div>
+                            <h5 class="font-bold text-stone-800 mb-2">Doc Summarization</h5>
+                            <p class="text-sm text-stone-600 mb-4">ໃຫ້ AI ອ່ານເອກະສານ Technical ຍາວໆ ແລ້ວສະຫຼຸບອອກມາເປັນ Architecture Diagram Text ຫຼື Bullet points ໃຫ້ທີມເຂົ້າໃຈງ່າຍ.</p>
+                            <div class="text-xs bg-stone-100 p-2 rounded text-stone-500">
+                                ✓ Frontend: React<br>
+                                ✓ Backend: Node.js (Microservices)<br>
+                                ✓ DB: PostgreSQL
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-amber-50 border border-amber-200 p-4 rounded-lg text-center">
+                        <span class="inline-block bg-amber-200 text-amber-800 text-xs px-2 py-1 rounded font-bold mb-2">Impact</span>
+                        <p class="text-stone-800 font-semibold text-sm">ປ່ຽນຂໍ້ມູນດິບ (Raw Data) ໃຫ້ເປັນ Actionable Insights ໄດ້ພາຍໃນບໍ່ເທົ່າໃດນາທີ, ແກ້ໄຂ System Issue ໄດ້ໄວຂຶ້ນ.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-auto" class="tab-content">
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <h4 class="text-2xl font-bold text-teal-800 mb-4">App Integration & Automation</h4>
+                    <p class="text-stone-600 text-sm">
+                        ເຊື່ອມຕໍ່ລະບົບຕ່າງໆເຂົ້າກັນເພື່ອໃຫ້ການເຮັດວຽກມີຄວາມເປັນອັດຕະໂນມັດ ແລະ ຊານສະຫຼາດຂຶ້ນ ຫຼຸດຜ່ອນວຽກ Manual ຂອງທີມ Support ແລະ Dev.
+                    </p>
+                </div>
+
+                <div class="bg-stone-50 p-6 md:p-10 rounded-xl border border-stone-200 mb-8 overflow-x-auto">
+                    <h5 class="text-center text-sm font-bold text-stone-500 uppercase tracking-widest mb-8">Automated Incident Response Flow</h5>
+                    
+                    <div class="flex flex-col md:flex-row items-center justify-between min-w-[600px] gap-4">
+                        <div class="bg-white border-2 border-stone-300 p-4 rounded-lg text-center shadow-sm w-32 relative">
+                            <div class="text-3xl mb-2">&#128221;</div>
+                            <div class="text-xs font-bold text-stone-700">User Report / Log</div>
+                        </div>
+                        
+                        <div class="text-stone-400 text-2xl font-bold">&#10140;</div>
+                        
+                        <div class="bg-white border-2 border-amber-400 p-4 rounded-lg text-center shadow-sm w-32 relative">
+                            <div class="text-3xl mb-2">&#9889;</div>
+                            <div class="text-xs font-bold text-stone-700">Zapier / Make</div>
+                            <div class="absolute -top-3 -right-3 bg-amber-100 text-amber-800 text-[10px] px-2 py-0.5 rounded-full font-bold">Trigger</div>
+                        </div>
+                        
+                        <div class="text-stone-400 text-2xl font-bold">&#10140;</div>
+                        
+                        <div class="bg-white border-2 border-teal-500 p-4 rounded-lg text-center shadow-sm w-32 relative">
+                            <div class="text-3xl mb-2">&#129488;</div>
+                            <div class="text-xs font-bold text-stone-700">AI Analysis API (OpenAI/Gemini)</div>
+                            <div class="absolute -bottom-3 -left-3 bg-teal-100 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-bold">Categorize</div>
+                        </div>
+                        
+                        <div class="text-stone-400 text-2xl font-bold">&#10140;</div>
+                        
+                        <div class="bg-white border-2 border-purple-500 p-4 rounded-lg text-center shadow-sm w-32 relative">
+                            <div class="text-3xl mb-2">&#128172;</div>
+                            <div class="text-xs font-bold text-stone-700">Slack Alert to Dev Team</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <span class="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold mb-2">Impact</span>
+                    <p class="text-stone-800 font-semibold text-sm max-w-xl mx-auto">ທີມ Support ແລະ Dev ເຮັດວຽກຮ່ວມກັນໄດ້ແບ່ງເບົາຂຶ້ນ, ຕອບສະໜອງຕໍ່ບັນຫາ (Incident Response) ໄດ້ແບບ Real-time.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="bg-stone-100 py-16 border-t border-stone-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-stone-800 mb-4">AI Proficiency & Prompt Engineering Level</h3>
+                <p class="text-stone-600 max-w-2xl mx-auto">ການມີທັກສະລະດັບ Expert ໃນການຂຽນ Prompt (Level 3) ແລະ ການນຳໃຊ້ AI Tools ຕ່າງໆຢ່າງຊຳນານ.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-center font-bold text-stone-700 mb-2">AI Tools Mastery</h4>
+                    <p class="text-center text-xs text-stone-500 mb-6">ລະດັບຄວາມຊຳນານຂອງແຕ່ລະເຄື່ອງມືທີ່ນຳໃຊ້ປະຈຳວັນ</p>
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold text-teal-800 mb-6 border-b border-stone-300 pb-2">Level 3: Expert Prompting Techniques</h4>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-stone-100 hover:border-teal-300 transition">
+                            <h5 class="font-bold text-stone-800 mb-1 flex items-center">
+                                <span class="bg-teal-100 text-teal-800 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">1</span>
+                                Contextual & Persona Prompting
+                            </h5>
+                            <p class="text-sm text-stone-600 ml-8">ກຳນົດບົດບາດໃຫ້ AI ເຊັ່ນ "Act as a Senior System Architect..." ເພື່ອໃຫ້ໄດ້ຜົນລັບທີ່ກົງກັບໜ້າວຽກ.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-stone-100 hover:border-teal-300 transition">
+                            <h5 class="font-bold text-stone-800 mb-1 flex items-center">
+                                <span class="bg-teal-100 text-teal-800 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">2</span>
+                                Chain-of-Thought (CoT)
+                            </h5>
+                            <p class="text-sm text-stone-600 ml-8">ສັ່ງໃຫ້ AI ຄິດເປັນຂັ້ນຕອນ (Step-by-step reasoning) ເພື່ອແກ້ໄຂ Bug ທີ່ຊັບຊ້ອນ ຫຼື ອອກແບບ Database Schema.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-stone-100 hover:border-teal-300 transition">
+                            <h5 class="font-bold text-stone-800 mb-1 flex items-center">
+                                <span class="bg-teal-100 text-teal-800 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">3</span>
+                                Few-Shot Prompting
+                            </h5>
+                            <p class="text-sm text-stone-600 ml-8">ໃຫ້ຕົວຢ່າງ (Examples) ການຂຽນ Code ຫຼື Format ຂອງ Document ກ່ອນໃຫ້ AI ສ້າງວຽກຈິງ ເພື່ອຄວບຄຸມ Output ໃຫ້ໄດ້ມາດຕະຖານທີມ.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-stone-100 hover:border-teal-300 transition">
+                            <h5 class="font-bold text-stone-800 mb-1 flex items-center">
+                                <span class="bg-teal-100 text-teal-800 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">4</span>
+                                Iterative Refinement
+                            </h5>
+                            <p class="text-sm text-stone-600 ml-8">ການດັດປັບ Prompt ຢ່າງຕໍ່ເນື່ອງເພື່ອເພີ່ມປະສິດທິພາບຂອງຜົນລັບ (Zeroing in on the solution).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-stone-900 py-16 text-center text-stone-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6">Ready to transform your development process with AI?</h2>
+            <p class="text-stone-400 mb-10 text-lg">ພ້ອມແລ້ວຫຼືຍັງທີ່ຈະປ່ຽນແປງຂະບວນການພັດທະນາຂອງທ່ານດ້ວຍ AI?</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="mailto:oulai.alc@gmail.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-auto px-8 py-3 bg-teal-600 hover:bg-teal-500 rounded-full font-semibold transition text-white">
+                        &#128231; Email Me
+                    </a>
+
+                    <a href="https://api.whatsapp.com/send?phone=8562058885903..." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-auto px-8 py-3 bg-stone-700 hover:bg-stone-600 rounded-full font-semibold transition text-white">
+                        &#128279; WhatsApp
+                    </a>
+
+                    <a href="https://github.com/oulai001/ai-dev-portfolio" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-auto px-8 py-3 bg-stone-700 hover:bg-stone-600 rounded-full font-semibold transition text-white">
+                        &#128187; GitHub
+                </a>
+            </div>
+            
+            <div class="mt-16 text-sm text-stone-500">
+                &copy; 2026 AI-Empowered Dev Team Lead Portfolio. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function wrapLabel(label) {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (let i = 0; i < words.length; i++) {
+                let word = words[i];
+                if ((currentLine + word).length > 16) {
+                    if (currentLine) lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            }
+            if (currentLine) lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        Chart.defaults.font.family = "'Noto Sans Lao', sans-serif";
+        Chart.defaults.color = '#57534e';
+
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        const rawBarLabels = ['Admin & Org', 'Coding & Test', 'Documentation'];
+        const processedBarLabels = rawBarLabels.map(wrapLabel);
+
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: processedBarLabels,
+                datasets: [
+                    {
+                        label: 'Traditional (Hours)',
+                        data: [15, 40, 10],
+                        backgroundColor: '#d6d3d1',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'AI-Assisted (Hours)',
+                        data: [9, 28, 6],
+                        backgroundColor: '#0f766e',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#f5f5f4' },
+                        title: { display: true, text: 'Hours / Sprint' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        const radarCtx = document.getElementById('radarChart').getContext('2d');
+        const rawRadarLabels = 
+        [
+            'Cursor IDE (AI-Native Dev)', 
+            'GitHub Copilot (Inline Code)', 
+            'Claude (Arch & Doc Analysis)', 
+            'ChatGPT (Data & Logic)', 
+            'Notion AI (Knowledge Base)', 
+            'Jira Intelligence (Agile)',
+            'Gemini (Workspace & API)'
+        ];
+        const processedRadarLabels = rawRadarLabels.map(wrapLabel);
+
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: processedRadarLabels,
+                datasets: [{
+                    label: 'Proficiency Level',
+                    data: [95, 90, 90, 95, 85, 80, 85],
+                    backgroundColor: 'rgba(15, 118, 110, 0.2)',
+                    borderColor: 'rgba(15, 118, 110, 1)',
+                    pointBackgroundColor: '#d97706',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#d97706',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { color: '#e7e5e4' },
+                        grid: { color: '#e7e5e4' },
+                        pointLabels: {
+                            font: { size: 11, weight: '600' }
+                        },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        const buttons = document.querySelectorAll('#tab-buttons button');
+        const contents = document.querySelectorAll('.tab-content');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => {
+                    b.classList.remove('bg-teal-700', 'text-white', 'shadow-md');
+                    b.classList.add('bg-stone-200', 'text-stone-700');
+                });
+                btn.classList.remove('bg-stone-200', 'text-stone-700');
+                btn.classList.add('bg-teal-700', 'text-white', 'shadow-md');
+
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
